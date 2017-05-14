@@ -67,6 +67,11 @@ namespace AF.Pathfinding
             UpdateCells();
         }
 
+        public void OnQuit()
+        {
+            Application.Quit();
+        }
+
         public void SetTargetNode(DijkstraTestGridCell cell, bool isAdd)
         {
             var node = _map.GetNodeAt(cell.node.x, cell.node.y);

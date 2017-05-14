@@ -35,3 +35,5 @@ sysinfo.txt
 Thumbs.db
 Thumbs.db.meta
 *~
+/PathfindingDemo.exe
+/PathfindingDemo_Data

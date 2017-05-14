@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace AF.UnityUtilities
+namespace AF.Pathfinding
 {
 
     public class MapTools : MonoBehaviour

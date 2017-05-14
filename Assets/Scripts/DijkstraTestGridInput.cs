@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace AF.UnityUtilities
+namespace AF.Pathfinding
 {
 
     public class DijkstraTestGridInput : MonoBehaviour

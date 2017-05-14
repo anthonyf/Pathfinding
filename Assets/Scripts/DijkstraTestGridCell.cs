@@ -1,9 +1,10 @@
-﻿using System;
+﻿using AF.UnityUtilities;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AF.UnityUtilities
+namespace AF.Pathfinding
 {
 
     public class DijkstraTestGridCell : MonoBehaviour

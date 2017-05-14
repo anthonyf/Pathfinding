@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AF.UnityUtilities
+namespace AF.Pathfinding
 {
     public interface IGraph<TNode>
     {

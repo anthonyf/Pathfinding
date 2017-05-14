@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AF.UnityUtilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace AF.UnityUtilities
+namespace AF.Pathfinding
 {
 
     public class GridMap<T> : IGraph<GridMap<T>.Node>

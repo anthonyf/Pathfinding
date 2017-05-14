@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using AF.UnityUtilities;
+using System.Collections.Generic;
 
-namespace AF.UnityUtilities
+namespace AF.Pathfinding
 {
     public static class AStar<TNode> where TNode : class
     {

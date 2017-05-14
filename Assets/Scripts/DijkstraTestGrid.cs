@@ -35,6 +35,7 @@ namespace AF.Pathfinding
         void Start()
         {
             _targetCells = new HashSet<GridMap<DijkstraTestGridCell>.Node>();
+            _sourceCells = new HashSet<GridMap<DijkstraTestGridCell>.Node>();
 
             _map = new GridMap<DijkstraTestGridCell>(width, height);
             for (int x = 0; x < width; x++)
@@ -86,6 +87,20 @@ namespace AF.Pathfinding
             UpdateCells();
         }
 
+        public void SetSourceNode(DijkstraTestGridCell cell, bool isAdd)
+        {
+            var node = _map.GetNodeAt(cell.node.x, cell.node.y);
+            if (isAdd)
+            {
+                _sourceCells.Add(node);
+            }
+            else
+            {
+                _sourceCells.Remove(node);
+            }
+            UpdateCells();
+        }
+
         public void SetTerrainCost(DijkstraTestGridCell cell, bool isIncrease)
         {
             var node = _map.GetNodeAt(cell.node.x, cell.node.y);
@@ -107,12 +122,6 @@ namespace AF.Pathfinding
         {
             var node = _map.GetNodeAt(cell.node.x, cell.node.y);
             node.isWalkable = isWalkable;
-            UpdateCells();
-        }
-
-        public void SetSourceNode(DijkstraTestGridCell cell, bool isIncrease)
-        {
-            //TODO
             UpdateCells();
         }
 
@@ -139,6 +148,15 @@ namespace AF.Pathfinding
                     });
                     break;
             }
+            // update paths
+            _sourceCells.ToList().ForEach(n =>
+            {
+                var pathNodes = Dijkstra<GridMap<DijkstraTestGridCell>.Node>.FindPath(nodeMap[n], nodeMap);
+                pathNodes.ForEach(p =>
+                {
+                    p.data.SetPath();
+                });
+            });            
         }
 
         Vector3 MapIndexToWorldPosition(int x, int y)
